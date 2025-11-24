@@ -1,0 +1,19 @@
+id: education
+name: Education & Learning Pack
+version: 0.1.0
+description: >
+  Core course design, assessment, and student-success agents and workflows
+  for schools, bootcamps, and internal training academies.
+required_roles:
+  - Growth Catalyst
+  - Policy Steward
+  - Instructor
+depends_on:
+  - blackroad-os-api >=0.1.0
+  - blackroad-os-core >=0.1.0
+tags:
+  - education
+  - training
+  - curriculum
+  - assessment
+  - student-success

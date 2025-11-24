@@ -1,0 +1,21 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "required": ["id", "title", "descriptors"],
+  "properties": {
+    "id": { "type": "string" },
+    "title": { "type": "string" },
+    "descriptors": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["level", "description"],
+        "properties": {
+          "level": { "type": "string" },
+          "description": { "type": "string" }
+        }
+      }
+    }
+  },
+  "additionalProperties": false
+}

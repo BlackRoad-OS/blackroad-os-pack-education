@@ -1,0 +1,19 @@
+{
+  "name": "blackroad-os-pack-education",
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "test": "npm run test:py && npm run test:ts && npm run lint:yaml",
+    "test:ts": "vitest run",
+    "test:py": "pytest",
+    "lint:yaml": "node scripts/validate-yaml.mjs"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "ajv": "^8.12.0",
+    "js-yaml": "^4.1.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.0",
+    "vitest": "^1.6.0"
+  }
+}
