@@ -1,0 +1,68 @@
+{
+  "$schema": "../../schemas/course.schema.json",
+  "id": "course:intro-to-blackroad-os",
+  "title": "Introduction to BlackRoad OS",
+  "description": "Learn the fundamentals of BlackRoad OS - its philosophy, architecture, and how to build with it",
+  "version": "1.0.0",
+  "level": "beginner",
+  "estimatedHours": 8,
+  "tags": ["blackroad-os", "fundamentals", "introduction", "architecture"],
+  "prerequisites": [
+    {
+      "type": "knowledge",
+      "reference": "basic-programming",
+      "description": "Basic understanding of programming concepts"
+    },
+    {
+      "type": "knowledge",
+      "reference": "json-familiarity",
+      "description": "Familiarity with JSON format"
+    }
+  ],
+  "outcomes": [
+    "Understand the BlackRoad OS philosophy and architecture",
+    "Navigate the BlackRoad OS repository ecosystem",
+    "Create basic flows and content using OS schemas",
+    "Integrate Packs with the core system",
+    "Use agents effectively within the OS"
+  ],
+  "modules": [
+    {
+      "id": "module:bos-philosophy",
+      "title": "BlackRoad OS Philosophy & Vision",
+      "description": "Understanding the why and what of BlackRoad OS",
+      "lessons": [
+        "lesson:bos-philosophy-intro",
+        "lesson:bos-architecture-overview"
+      ],
+      "assessment": "assessment:bos-philosophy-quiz"
+    },
+    {
+      "id": "module:bos-structure",
+      "title": "Repository Structure & Packs",
+      "description": "How BlackRoad OS is organized",
+      "lessons": [
+        "lesson:bos-repo-ecosystem",
+        "lesson:bos-packs-intro",
+        "lesson:bos-core-concepts"
+      ],
+      "assessment": "assessment:bos-structure-quiz"
+    },
+    {
+      "id": "module:bos-building",
+      "title": "Building with BlackRoad OS",
+      "description": "Hands-on: Create flows and use schemas",
+      "lessons": [
+        "lesson:bos-schemas-intro",
+        "lesson:bos-flows-intro",
+        "lesson:bos-agents-intro"
+      ],
+      "assessment": "assessment:bos-building-project"
+    }
+  ],
+  "metadata": {
+    "author": "BlackRoad OS Education Team",
+    "createdAt": "2025-11-25T00:00:00Z",
+    "updatedAt": "2025-11-25T00:00:00Z"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "name": "blackroad-os-pack-education",
+  "version": "1.0.0",
+  "description": "🎓 Education Pack for BlackRoad OS - learning flows, curricula, and teaching tools",
+  "main": "index.js",
+  "scripts": {
+    "test": "node tests/run-all-tests.js",
+    "test:schemas": "node tests/schema-validation.test.js",
+    "test:states": "node tests/progress-states.test.js",
+    "test:agents": "node tests/agent-config.test.js",
+    "validate": "npm run test:schemas && npm run test:states && npm run test:agents"
+  },
+  "keywords": [
+    "blackroad-os",
+    "education",
+    "learning",
+    "courses",
+    "teaching"
+  ],
+  "author": "BlackRoad OS",
+  "license": "MIT",
+  "devDependencies": {
+    "ajv": "^8.12.0",
+    "ajv-formats": "^2.1.1"
+  }
+}
