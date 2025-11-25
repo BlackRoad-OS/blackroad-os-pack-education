@@ -5,12 +5,12 @@
  * Ensures state transitions follow the defined rules
  */
 
-const fs = require('fs');
 const path = require('path');
 
-const stateConfig = JSON.parse(
-  fs.readFileSync(path.join(__dirname, '../flows/state-transitions.json'), 'utf8')
-);
+/**
+ * Load state config once at module level for better performance
+ */
+const stateConfig = require(path.join(__dirname, '../flows/state-transitions.json'));
 
 let totalTests = 0;
 let passedTests = 0;

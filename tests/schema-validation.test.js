@@ -90,6 +90,12 @@ testSchema(
   'Example course validates against course schema'
 );
 
+testSchema(
+  path.join(__dirname, '../schemas/course.schema.json'),
+  path.join(__dirname, '../examples/security-awareness-training/course.json'),
+  'Example compliance course validates against course schema'
+);
+
 // Test lesson schema
 testSchema(
   path.join(__dirname, '../schemas/lesson.schema.json'),
@@ -173,6 +179,50 @@ testSchema(
   path.join(__dirname, '../schemas/flow.schema.json'),
   path.join(__dirname, '../flows/review-and-revise.flow.json'),
   'Review and revise flow validates against flow schema'
+);
+
+testSchema(
+  path.join(__dirname, '../schemas/flow.schema.json'),
+  path.join(__dirname, '../flows/complete-assessment.flow.json'),
+  'Complete assessment flow validates against flow schema'
+);
+
+testSchema(
+  path.join(__dirname, '../schemas/flow.schema.json'),
+  path.join(__dirname, '../flows/archive-completion.flow.json'),
+  'Archive completion flow validates against flow schema'
+);
+
+// Test assessment schema
+testSchema(
+  path.join(__dirname, '../schemas/assessment.schema.json'),
+  path.join(__dirname, '../examples/intro-to-blackroad-os/activities/philosophy-quiz.assessment.json'),
+  'Example assessment validates against assessment schema'
+);
+
+// Test additional templates
+testSchema(
+  path.join(__dirname, '../schemas/lesson.schema.json'),
+  path.join(__dirname, '../templates/lesson-lab.template.json'),
+  'Lab lesson template validates against lesson schema'
+);
+
+testSchema(
+  path.join(__dirname, '../schemas/rubric.schema.json'),
+  path.join(__dirname, '../templates/rubric-quiz.template.json'),
+  'Quiz rubric template validates against rubric schema'
+);
+
+testSchema(
+  path.join(__dirname, '../schemas/rubric.schema.json'),
+  path.join(__dirname, '../templates/rubric-reflection.template.json'),
+  'Reflection rubric template validates against rubric schema'
+);
+
+testSchema(
+  path.join(__dirname, '../schemas/rubric.schema.json'),
+  path.join(__dirname, '../templates/rubric-participation.template.json'),
+  'Participation rubric template validates against rubric schema'
 );
 
 // Summary
