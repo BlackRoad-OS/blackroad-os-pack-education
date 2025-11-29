@@ -15,3 +15,8 @@ coverage/
 *~
 .tmp/
 tmp/
+.pytest_cache/
+__pycache__/
+.npm/
+.DS_Store
+coverage/

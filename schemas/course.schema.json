@@ -95,6 +95,44 @@
         "complianceCategory": {
           "type": "string",
           "description": "🚨 REQUIRED TRAINING FLOW – COMPLETION MUST BE AUDITABLE"
+  "type": "object",
+  "required": ["id", "title", "level", "target_learners", "objectives", "modules", "suggested_assessments"],
+  "properties": {
+    "id": { "type": "string" },
+    "title": { "type": "string" },
+    "level": { "type": "string" },
+    "target_learners": { "type": "array", "items": { "type": "string" } },
+    "objectives": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "text"],
+        "properties": {
+          "id": { "type": "string" },
+          "text": { "type": "string" }
+        }
+      }
+    },
+    "modules": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "title", "objectives"],
+        "properties": {
+          "id": { "type": "string" },
+          "title": { "type": "string" },
+          "objectives": { "type": "array", "items": { "type": "string" } }
+        }
+      }
+    },
+    "suggested_assessments": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["type", "weight"],
+        "properties": {
+          "type": { "type": "string" },
+          "weight": { "type": "number" }
         }
       }
     }
@@ -130,4 +168,5 @@
       }
     }
   }
+  "additionalProperties": false
 }
