@@ -2,10 +2,14 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "https://blackroad-os.dev/schemas/education/course.json",
   "title": "Course",
-  "description": "📚 A complete course structure with modules, lessons, and assessments",
+  "description": "A complete course structure with modules, lessons, and assessments",
   "type": "object",
   "required": ["id", "title", "version", "prerequisites", "outcomes", "modules"],
   "properties": {
+    "$schema": {
+      "type": "string",
+      "description": "JSON Schema reference"
+    },
     "id": {
       "type": "string",
       "description": "Unique identifier for the course",
@@ -78,6 +82,35 @@
       "minItems": 1,
       "description": "Course modules in sequential order"
     },
+    "suggested_assessments": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["type", "weight"],
+        "properties": {
+          "type": { "type": "string" },
+          "weight": { "type": "number" }
+        }
+      },
+      "description": "Suggested assessments for the course"
+    },
+    "target_learners": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Target audience for this course"
+    },
+    "objectives": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "text"],
+        "properties": {
+          "id": { "type": "string" },
+          "text": { "type": "string" }
+        }
+      },
+      "description": "Learning objectives"
+    },
     "metadata": {
       "type": "object",
       "properties": {
@@ -94,45 +127,7 @@
         },
         "complianceCategory": {
           "type": "string",
-          "description": "🚨 REQUIRED TRAINING FLOW – COMPLETION MUST BE AUDITABLE"
-  "type": "object",
-  "required": ["id", "title", "level", "target_learners", "objectives", "modules", "suggested_assessments"],
-  "properties": {
-    "id": { "type": "string" },
-    "title": { "type": "string" },
-    "level": { "type": "string" },
-    "target_learners": { "type": "array", "items": { "type": "string" } },
-    "objectives": {
-      "type": "array",
-      "items": {
-        "type": "object",
-        "required": ["id", "text"],
-        "properties": {
-          "id": { "type": "string" },
-          "text": { "type": "string" }
-        }
-      }
-    },
-    "modules": {
-      "type": "array",
-      "items": {
-        "type": "object",
-        "required": ["id", "title", "objectives"],
-        "properties": {
-          "id": { "type": "string" },
-          "title": { "type": "string" },
-          "objectives": { "type": "array", "items": { "type": "string" } }
-        }
-      }
-    },
-    "suggested_assessments": {
-      "type": "array",
-      "items": {
-        "type": "object",
-        "required": ["type", "weight"],
-        "properties": {
-          "type": { "type": "string" },
-          "weight": { "type": "number" }
+          "description": "REQUIRED TRAINING FLOW - COMPLETION MUST BE AUDITABLE"
         }
       }
     }
@@ -161,12 +156,17 @@
           },
           "minItems": 1
         },
+        "objectives": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Module-specific objectives"
+        },
         "assessment": {
           "type": "string",
           "description": "Reference to module assessment ID"
         }
       }
     }
-  }
+  },
   "additionalProperties": false
 }

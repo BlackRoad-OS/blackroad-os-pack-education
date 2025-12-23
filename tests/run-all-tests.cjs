@@ -38,9 +38,9 @@ async function runAllTests() {
   console.log('🧪 ============================================\n');
 
   const tests = [
-    ['schema-validation.test.js', 'Schema Validation Tests'],
-    ['progress-states.test.js', 'Progress State Tests'],
-    ['agent-config.test.js', 'Agent Configuration Tests']
+    ['schema-validation.test.cjs', 'Schema Validation Tests'],
+    ['progress-states.test.cjs', 'Progress State Tests'],
+    ['agent-config.test.cjs', 'Agent Configuration Tests']
   ];
 
   let allPassed = true;
