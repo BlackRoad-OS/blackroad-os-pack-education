@@ -1,0 +1,65 @@
+{
+  "version": "1.0.0",
+  "roadchain": {
+    "enabled": true,
+    "algorithm": "SHA-256",
+    "description": "RoadChain tracks all commits using SHA-256 cryptographic hashing for immutable audit trails",
+    "features": {
+      "commitTracking": true,
+      "chainOfCustody": true,
+      "immutableAudit": true,
+      "cryptographicVerification": true
+    }
+  },
+  "tracking": {
+    "commitHash": {
+      "algorithm": "SHA-256",
+      "includeMetadata": true,
+      "fields": [
+        "author",
+        "timestamp",
+        "message",
+        "files",
+        "parent"
+      ]
+    },
+    "verification": {
+      "enabled": true,
+      "signatureRequired": false,
+      "chainValidation": true
+    }
+  },
+  "storage": {
+    "blockchain": {
+      "enabled": false,
+      "provider": "roadchain-network"
+    },
+    "local": {
+      "enabled": true,
+      "path": ".roadchain/commits"
+    },
+    "remote": {
+      "enabled": true,
+      "endpoint": "https://roadchain.blackroad.io/api/v1/commits",
+      "backup": true
+    }
+  },
+  "hooks": {
+    "preCommit": {
+      "enabled": true,
+      "validateChain": true,
+      "generateHash": true
+    },
+    "postCommit": {
+      "enabled": true,
+      "recordToChain": true,
+      "syncRemote": true
+    }
+  },
+  "audit": {
+    "enabled": true,
+    "retentionDays": 365,
+    "exportFormat": "json",
+    "auditLog": ".roadchain/audit.log"
+  }
+}

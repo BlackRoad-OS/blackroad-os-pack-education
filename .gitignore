@@ -20,3 +20,7 @@ __pycache__/
 .npm/
 .DS_Store
 coverage/
+
+# RoadChain tracking data (keep structure, ignore commit data)
+.roadchain/commits/*.json
+.roadchain/chains/*.chain

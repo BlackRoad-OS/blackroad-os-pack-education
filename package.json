@@ -23,7 +23,7 @@
     "teaching"
   ],
   "author": "BlackRoad OS",
-  "license": "MIT",
+  "license": "PROPRIETARY",
   "devDependencies": {
     "@types/node": "^20.11.0",
     "ajv": "^8.12.0",
