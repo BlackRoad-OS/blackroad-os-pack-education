@@ -2,10 +2,14 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "https://blackroad-os.dev/schemas/education/rubric.json",
   "title": "Rubric",
-  "description": "✅ Evaluation rubric for assessing learner work",
+  "description": "Evaluation rubric for assessing learner work",
   "type": "object",
   "required": ["id", "title", "criteria"],
   "properties": {
+    "$schema": {
+      "type": "string",
+      "description": "JSON Schema reference"
+    },
     "id": {
       "type": "string",
       "description": "Unique identifier for the rubric",
@@ -33,15 +37,27 @@
       "minItems": 1,
       "description": "Evaluation criteria"
     },
+    "descriptors": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["level", "description"],
+        "properties": {
+          "level": { "type": "string" },
+          "description": { "type": "string" }
+        }
+      },
+      "description": "Level descriptors for holistic rubrics"
+    },
     "agentAutomatable": {
       "type": "boolean",
       "default": false,
-      "description": "🤖 Can agents auto-evaluate using this rubric?"
+      "description": "Can agents auto-evaluate using this rubric?"
     },
     "requiresHumanReview": {
       "type": "boolean",
       "default": false,
-      "description": "🧍‍♀️ Requires human review before final grade"
+      "description": "Requires human review before final grade"
     }
   },
   "definitions": {
@@ -87,23 +103,6 @@
           },
           "minItems": 2,
           "description": "Performance levels for this criterion"
-        }
-      }
-    }
-  }
-  "type": "object",
-  "required": ["id", "title", "descriptors"],
-  "properties": {
-    "id": { "type": "string" },
-    "title": { "type": "string" },
-    "descriptors": {
-      "type": "array",
-      "items": {
-        "type": "object",
-        "required": ["level", "description"],
-        "properties": {
-          "level": { "type": "string" },
-          "description": { "type": "string" }
         }
       }
     }
