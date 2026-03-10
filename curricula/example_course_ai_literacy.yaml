@@ -1,19 +1,30 @@
-id: ai-literacy-101
+id: "course:ai-literacy-101"
 title: AI Literacy for Non-Technical Teams
-level: intro
+version: "1.0.0"
+level: beginner
 target_learners: ["professional", "manager", "operator"]
+prerequisites: []
+outcomes:
+  - "Explain common AI concepts in plain language."
+  - "Identify responsible AI considerations for everyday workflows."
 objectives:
   - id: ai-lit-obj-1
     text: "Explain common AI concepts in plain language."
   - id: ai-lit-obj-2
     text: "Identify responsible AI considerations for everyday workflows."
 modules:
-  - id: ai-lit-mod-1
+  - id: "module:ai-lit-mod-1"
     title: "AI Fundamentals"
     objectives: [ai-lit-obj-1]
-  - id: ai-lit-mod-2
+    lessons:
+      - "lesson:ai-lit-what-is-ai"
+      - "lesson:ai-lit-how-models-work"
+  - id: "module:ai-lit-mod-2"
     title: "Responsible AI in Practice"
     objectives: [ai-lit-obj-2]
+    lessons:
+      - "lesson:ai-lit-bias-fairness"
+      - "lesson:ai-lit-ai-in-workflows"
 suggested_assessments:
   - type: reflection
     weight: 0.4

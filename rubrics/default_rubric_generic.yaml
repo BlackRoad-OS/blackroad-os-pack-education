@@ -1,11 +1,23 @@
-id: default-generic-rubric
+id: "rubric:default-generic"
 title: Default Performance Rubric
-descriptors:
-  - level: exceeds
-    description: Learner surpasses the objective with insight and transferability.
-  - level: meets
-    description: Learner meets the objective with clear evidence of understanding.
-  - level: approaches
-    description: Learner demonstrates partial understanding; follow-up required.
-  - level: does_not_meet
-    description: Learner does not demonstrate the objective; substantial support needed.
+description: "General-purpose rubric for evaluating learner work across any subject."
+type: holistic
+agentAutomatable: false
+requiresHumanReview: true
+criteria:
+  - id: overall-performance
+    name: Overall Performance
+    description: "Holistic assessment of learner work against stated objectives."
+    levels:
+      - level: Exceeds
+        description: "Learner surpasses the objective with insight and transferability."
+        points: 100
+      - level: Meets
+        description: "Learner meets the objective with clear evidence of understanding."
+        points: 80
+      - level: Approaches
+        description: "Learner demonstrates partial understanding; follow-up required."
+        points: 60
+      - level: Does Not Meet
+        description: "Learner does not demonstrate the objective; substantial support needed."
+        points: 40

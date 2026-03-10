@@ -3,8 +3,14 @@
  * Entry point for accessing schemas, flows, templates, and agents
  */
 
-const fs = require('fs');
-const path = require('path');
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
+import { createRequire } from 'module';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const require = createRequire(import.meta.url);
 
 /**
  * Load all schemas
@@ -110,14 +116,12 @@ function getTransitionRequirements(fromState, toState) {
 }
 
 // Exports
-module.exports = {
-  schemas: loadSchemas(),
-  flows: loadFlows(),
-  agents: loadAgents(),
-  stateTransitions: loadStateTransitions(),
-  utils: {
-    isValidStateTransition,
-    getTransitionRequirements
-  },
-  version: require('./package.json').version
+export const schemas = loadSchemas();
+export const flows = loadFlows();
+export const agents = loadAgents();
+export const stateTransitions = loadStateTransitions();
+export const utils = {
+  isValidStateTransition,
+  getTransitionRequirements
 };
+export const version = require('./package.json').version;

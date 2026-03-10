@@ -1,19 +1,30 @@
-id: math-101
+id: "course:math-101"
 title: Foundations of Mathematics
-level: intro
+version: "1.0.0"
+level: beginner
 target_learners: ["undergraduate", "adult_learner"]
+prerequisites: []
+outcomes:
+  - "Interpret and manipulate algebraic expressions."
+  - "Solve systems of linear equations."
 objectives:
   - id: math-101-obj-1
     text: "Interpret and manipulate algebraic expressions."
   - id: math-101-obj-2
     text: "Solve systems of linear equations."
 modules:
-  - id: math-101-mod-1
+  - id: "module:math-101-mod-1"
     title: "Algebra Refresher"
     objectives: [math-101-obj-1]
-  - id: math-101-mod-2
+    lessons:
+      - "lesson:math-101-expressions"
+      - "lesson:math-101-simplifying"
+  - id: "module:math-101-mod-2"
     title: "Linear Systems"
     objectives: [math-101-obj-2]
+    lessons:
+      - "lesson:math-101-systems-intro"
+      - "lesson:math-101-substitution"
 suggested_assessments:
   - type: quiz
     weight: 0.3
